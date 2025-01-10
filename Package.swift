@@ -1,11 +1,11 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.8
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
   name: "Firebase",
-  platforms: [.iOS(.v11), .macOS(.v10_12), .tvOS(.v12), .watchOS(.v7)],
+  platforms: [.iOS(.v11), .macCatalyst(.v15), .macOS(.v10_13), .tvOS(.v12), .watchOS(.v7)],
   products: [
     .library(
       name: "FirebaseABTesting",
@@ -337,11 +337,11 @@ let package = Package(
       dependencies: [
         "Firebase",
         "FirebaseAnalyticsTarget",
-        .target(name: "_AppAuth", condition: .when(platforms: [.iOS])),
+        .target(name: "_AppAuth", condition: .when(platforms: [.iOS, .macCatalyst,])),
         "_AppCheckCore",
-        .target(name: "_GTMAppAuth", condition: .when(platforms: [.iOS])),
+        .target(name: "_GTMAppAuth", condition: .when(platforms: [.iOS, .macCatalyst,])),
         "_GTMSessionFetcher",
-        .target(name: "_GoogleSignIn", condition: .when(platforms: [.iOS]))
+        .target(name: "_GoogleSignIn", condition: .when(platforms: [.iOS, .macCatalyst,]))
       ],
       path: "Sources/GoogleSignIn"
     ),
