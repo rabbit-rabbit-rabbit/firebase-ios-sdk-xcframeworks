@@ -1,11 +1,11 @@
-// swift-tools-version:5.8
+// swift-tools-version:5.5
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
   name: "Firebase",
-  platforms: [.iOS(.v11), .macCatalyst(.v16), .macOS(.v10_13), .tvOS(.v12), .watchOS(.v7)],
+  platforms: [.iOS(.v11), .macCatalyst(.v15), .macOS(.v10_13), .tvOS(.v12), .watchOS(.v7)],
   products: [
     .library(
       name: "FirebaseABTesting",
